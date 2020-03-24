@@ -9,6 +9,13 @@ def load_library(file)
     'get_meaning' => {},
     'get_emoticon' => {}
   }
+  
+  emoticons.each do |key,value|
+    translated['get_emoticon'][value[0]] = emoticons[key][1]
+    translated['get_meaning'][value[1]] = key
+  end
+
+  translated
 end
 
 def get_japanese_emoticon
